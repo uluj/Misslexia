@@ -1,0 +1,84 @@
+[gd_scene load_steps=5 format=3 uid="uid://d103jy5tatdjc"]
+
+[ext_resource type="Script" path="res://Scripts/main_scene.gd" id="1_be53e"]
+[ext_resource type="Texture2D" uid="uid://dgeks22pxdaab" path="res://Assets/Sprite-0002.png" id="2_x68kr"]
+[ext_resource type="Texture2D" uid="uid://xtdknp1ofolg" path="res://Assets/icon.svg" id="2_xd77r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6dlqi"]
+size = Vector2(232, 201)
+
+[node name="MainScene" type="Node2D"]
+script = ExtResource("1_be53e")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_x68kr")
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 1165.0
+offset_top = 652.0
+offset_right = 1415.0
+offset_bottom = 713.0
+text = "Onay icin bekleyen nesne"
+
+[node name="HealthBar" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 1726.0
+offset_top = 84.0
+offset_right = 1875.0
+offset_bottom = 740.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/HealthBar"]
+layout_mode = 2
+texture = ExtResource("2_xd77r")
+
+[node name="TextureRect2" type="TextureRect" parent="Control/HealthBar"]
+layout_mode = 2
+texture = ExtResource("2_xd77r")
+
+[node name="TextureRect3" type="TextureRect" parent="Control/HealthBar"]
+layout_mode = 2
+texture = ExtResource("2_xd77r")
+
+[node name="TextureRect4" type="TextureRect" parent="Control/HealthBar"]
+layout_mode = 2
+texture = ExtResource("2_xd77r")
+
+[node name="TextureRect5" type="TextureRect" parent="Control/HealthBar"]
+layout_mode = 2
+texture = ExtResource("2_xd77r")
+
+[node name="KabulAlani" type="Area2D" parent="."]
+position = Vector2(1578, 937)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KabulAlani"]
+shape = SubResource("RectangleShape2D_6dlqi")
+
+[node name="Icon" type="Sprite2D" parent="KabulAlani"]
+modulate = Color(0, 1, 0, 0.470588)
+scale = Vector2(1.8125, 1.57031)
+texture = ExtResource("2_xd77r")
+
+[node name="RedAlani" type="Area2D" parent="."]
+position = Vector2(387, 926)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RedAlani"]
+shape = SubResource("RectangleShape2D_6dlqi")
+
+[node name="Icon" type="Sprite2D" parent="RedAlani"]
+modulate = Color(1, 0, 0, 0.454902)
+scale = Vector2(1.8125, 1.57031)
+texture = ExtResource("2_xd77r")
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
+[connection signal="body_entered" from="KabulAlani" to="." method="_on_kabul_alani_body_entered"]
+[connection signal="body_entered" from="RedAlani" to="." method="_on_red_alani_body_entered"]
