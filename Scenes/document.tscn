@@ -1,9 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cetcu7bi5ppfb"]
+[gd_scene load_steps=4 format=3 uid="uid://8th500agj2su"]
 
 [ext_resource type="Texture2D" uid="uid://cimqv67kaoq7f" path="res://Assets/belge.png" id="1_sy33l"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uh3bu"]
-size = Vector2(161, 221)
 
 [sub_resource type="Animation" id="Animation_k0rfs"]
 resource_name = "documentGelis"
@@ -38,16 +35,13 @@ _data = {
 "documentGelis": SubResource("Animation_k0rfs")
 }
 
-[node name="document" type="CharacterBody2D"]
-position = Vector2(1170, 920)
+[node name="document" type="Node2D"]
+position = Vector2(945, 700)
+scale = Vector2(0.5, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
 texture = ExtResource("1_sy33l")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4.5, 0.5)
-shape = SubResource("RectangleShape2D_uh3bu")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

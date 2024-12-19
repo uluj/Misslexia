@@ -323,7 +323,6 @@ offset_bottom = 1040.0
 text = "Reddet"
 
 [node name="randomDocumentCreator" parent="." instance=ExtResource("6_ia81n")]
-visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../characters")

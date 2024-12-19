@@ -1,9 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtr1st863lx60"]
+[gd_scene load_steps=4 format=3 uid="uid://kvwthbb5sybd"]
 
 [ext_resource type="Texture2D" uid="uid://drpiue72lrxrl" path="res://Assets/card.png" id="2_wj10s"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_aelcq"]
-size = Vector2(128, 80)
 
 [sub_resource type="Animation" id="Animation_mbrg7"]
 resource_name = "idCardGelis"
@@ -38,15 +35,13 @@ _data = {
 "idCardGelis": SubResource("Animation_mbrg7")
 }
 
-[node name="idCard" type="CharacterBody2D"]
-position = Vector2(770, 920)
+[node name="idCard" type="Node2D"]
+position = Vector2(945, 700)
+scale = Vector2(0.5, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(4, 4)
 texture = ExtResource("2_wj10s")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_aelcq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
