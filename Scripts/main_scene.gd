@@ -4,14 +4,12 @@ extends Node2D
 var spawn_scene: PackedScene = preload("res://Scenes/onay_bekleyen_nesne.tscn")
 @onready var OnayBekleyenNesneler = $OnayBekleyenNesneler
 
-# Spawn olan nesneyi tutacak değişken
-var spawned_object = null
-
-# Mouse ile tutulan nesne
-var held_object = null
+# Spawn olan nesneyi tutacak değişkenler
+var spawned_object1 = null
+var spawned_object2 = null
 
 # Fonksiyon: Yeni bir nesne oluştur ve belirli parametrelerle sahneye ekle
-func spawn_object(is_it_true: bool, spawn_position: Vector2) -> Node:
+func spawn_object2(is_it_true: bool, spawn_position: Vector2) -> Node:
 	"""
 	Spawns an object with the given `is_it_true` parameter and spawn_position.
 
@@ -23,7 +21,7 @@ func spawn_object(is_it_true: bool, spawn_position: Vector2) -> Node:
 		Node: The spawned object instance.
 	"""
 	if spawn_scene:
-		spawned_object = spawn_scene.instantiate()
+		var spawned_object = spawn_scene.instantiate()
 		OnayBekleyenNesneler.add_child(spawned_object)
 		spawned_object.position = spawn_position
 
@@ -41,7 +39,19 @@ func spawn_object(is_it_true: bool, spawn_position: Vector2) -> Node:
 
 # Spawn butonu tetiklenince
 func _on_button_pressed():
-	spawn_object(true, Vector2(609, 277)) # Default example call
+	# Randomize boolean values each time the button is pressed
+	var is_it_true1 = randi_range(0, 1) == 1  # Random true or false
+	var is_it_true2 = randi_range(0, 1) == 1  # Random true or false
+	
+	# Spawn two objects with these random bool values
+	spawned_object1 = spawn_object2(is_it_true1, Vector2(609, 277))  # First object at position (609, 277)
+	spawned_object2 = spawn_object2(is_it_true2, Vector2(709, 277))  # Second object at position (709, 277)
+	
+	# Compare the two bools and print success/fail message
+	if is_it_true1 == is_it_true2:
+		print("Belge 1: %s, Belge 2: %s, Outcome: Success" % [is_it_true1, is_it_true2])
+	else:
+		print("Belge 1: %s, Belge 2: %s, Outcome: Fail" % [is_it_true1, is_it_true2])
 
 # Kabul alanına girildiğinde
 func _on_kabul_alani_body_entered(body):
