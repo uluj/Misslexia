@@ -5,7 +5,7 @@ var draggable = false
 func play_spawn_animation():
 	var animation_player = $AnimationPlayer  # Assuming the AnimationPlayer is a direct child
 	if animation_player:
-		animation_player.play("AnimationPlayer")  # Replace "spawn_animation" with your animation name
+		animation_player.play("belgeGelis")  # Replace "spawn_animation" with your animation name
 
 
 func _process(_delta):
