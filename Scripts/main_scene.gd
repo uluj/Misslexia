@@ -48,8 +48,8 @@ func _on_button_pressed():
 	var is_it_true2 = randi_range(0, 1) == 1  # Random true or false
 	
 	# Spawn two objects with these random bool values
-	spawned_object1 = spawn_object2(is_it_true1, Vector2(609, 277))  # First object at position (609, 277)
-	spawned_object2 = spawn_object2(is_it_true2, Vector2(709, 277))  # Second object at position (709, 277)
+	spawned_object1 = spawn_object2(is_it_true1, Vector2(1044, 718))  # First object at position (609, 277)
+	spawned_object2 = spawn_object2(is_it_true2, Vector2(844, 718))  # Second object at position (709, 277)
 
 	# Add both objects to a shared group for easy removal
 	spawned_object1.add_to_group("spawned_objects_group")

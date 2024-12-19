@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://d103jy5tatdjc"]
+[gd_scene load_steps=5 format=3 uid="uid://d103jy5tatdjc"]
 
 [ext_resource type="Script" path="res://Scripts/main_scene.gd" id="1_be53e"]
+[ext_resource type="Texture2D" uid="uid://dgeks22pxdaab" path="res://Assets/Sprite-0002.png" id="2_x68kr"]
 [ext_resource type="Texture2D" uid="uid://xtdknp1ofolg" path="res://Assets/icon.svg" id="2_xd77r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6dlqi"]
@@ -9,36 +10,38 @@ size = Vector2(232, 201)
 [node name="MainScene" type="Node2D"]
 script = ExtResource("1_be53e")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_x68kr")
+
 [node name="KabulAlani" type="Area2D" parent="."]
+position = Vector2(1578, 937)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KabulAlani"]
-position = Vector2(818, 547.5)
 shape = SubResource("RectangleShape2D_6dlqi")
 
 [node name="Icon" type="Sprite2D" parent="KabulAlani"]
-modulate = Color(0, 1, 0, 1)
-position = Vector2(818, 547.5)
+modulate = Color(0, 1, 0, 0.470588)
 scale = Vector2(1.8125, 1.57031)
 texture = ExtResource("2_xd77r")
 
 [node name="RedAlani" type="Area2D" parent="."]
-position = Vector2(-442, 0)
+position = Vector2(387, 926)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RedAlani"]
-position = Vector2(818, 547.5)
 shape = SubResource("RectangleShape2D_6dlqi")
 
 [node name="Icon" type="Sprite2D" parent="RedAlani"]
-modulate = Color(1, 0, 0, 1)
-position = Vector2(818, 547.5)
+modulate = Color(1, 0, 0, 0.454902)
 scale = Vector2(1.8125, 1.57031)
 texture = ExtResource("2_xd77r")
 
 [node name="Button" type="Button" parent="."]
-offset_left = 463.0
-offset_top = 78.0
-offset_right = 713.0
-offset_bottom = 139.0
+offset_left = 1165.0
+offset_top = 652.0
+offset_right = 1415.0
+offset_bottom = 713.0
 text = "Onay icin bekleyen nesne"
 
 [node name="OnayBekleyenNesneler" type="Node2D" parent="."]

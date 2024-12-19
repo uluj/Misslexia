@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://d0vmf56ad1u1q"]
 
 [ext_resource type="Script" path="res://Scripts/onay_bekleyen_nesne.gd" id="1_ed5kw"]
-[ext_resource type="Texture2D" uid="uid://xtdknp1ofolg" path="res://Assets/icon.svg" id="1_g2bnx"]
+[ext_resource type="Texture2D" uid="uid://drpiue72lrxrl" path="res://Assets/card.png" id="2_v5m3h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rsb01"]
-size = Vector2(128, 128)
+size = Vector2(25, 11.5)
 
 [sub_resource type="Animation" id="Animation_wbvv6"]
 resource_name = "belgeGelis"
@@ -19,7 +19,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0.3, 0.3), Vector2(1, 1)]
+"values": [Vector2(0.3, 0.3), Vector2(3, 3)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -40,15 +40,16 @@ _data = {
 }
 
 [node name="OnayBekleyenNesne" type="CharacterBody2D" groups=["movable"]]
-scale = Vector2(0.3, 0.3)
+position = Vector2(0, 144)
+scale = Vector2(3, 3)
 input_pickable = true
 script = ExtResource("1_ed5kw")
 
 [node name="Icon2" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 1, 1)
-texture = ExtResource("1_g2bnx")
+texture = ExtResource("2_v5m3h")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_rsb01")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
