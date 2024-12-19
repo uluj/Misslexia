@@ -15,6 +15,7 @@ var hatali_document_illness = ["Uyusturucu Bagamlisi", "Enfekte"]
 @onready var document_name_label = $documentName
 @onready var document_number_label = $documentNumber
 @onready var document_illness_label = $documentIllness
+@onready var MainScene = $".."
 
 func _ready():
 	randomize() # Rastgele sayılar için başlatıcı
@@ -55,6 +56,10 @@ func _on_create_new_documents_pressed():
 
 	# Hata durumu çıktısı
 	if is_hatalı:
+		MainScene.currentDocument = false
+		MainScene.is_there_any_document = true
 		print("Hatali belge oluşturuldu.")
 	else:
+		MainScene.currentDocument = true
+		MainScene.is_there_any_document = true
 		print("Dogru belge oluşturuldu.")
