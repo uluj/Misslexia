@@ -24,6 +24,7 @@ func _ready():
 	await get_tree().create_timer(4).timeout
 
 func _start_reset_timer():
+	print_debug("AAA")
 	var timer = Timer.new()
 	timer.wait_time = 4
 	timer.one_shot = true
@@ -85,3 +86,15 @@ func _reset_labels():
 	id_number_label.text = "[Boş]"
 	document_number_label.text = "[Boş]"
 	document_illness_label.text = "[Boş]"
+
+
+func _on_reset_timer_timeout():
+	print_debug("AAA")
+	var timer = Timer.new()
+	timer.wait_time = 4
+	timer.one_shot = true
+	add_child(timer)
+	timer.start()
+	_reset_labels()
+	await get_tree().create_timer(4).timeout
+
