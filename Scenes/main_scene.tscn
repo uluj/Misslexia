@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d103jy5tatdjc"]
+[gd_scene load_steps=11 format=3 uid="uid://d103jy5tatdjc"]
 
 [ext_resource type="Script" path="res://Scripts/main_scene.gd" id="1_be53e"]
 [ext_resource type="Texture2D" uid="uid://daia1xjss3g6m" path="res://Assets/char1.png" id="2_bdix7"]
@@ -86,9 +86,86 @@ tracks/5/keys = {
 "values": [false, true]
 }
 
+[sub_resource type="Animation" id="Animation_f28vn"]
+resource_name = "char1Gidis"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharactersUnPainted/Char1Siyah:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(942, 519), Vector2(2019, 707)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CharactersUnPainted/Char1Siyah:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(6, 6), Vector2(4, 4)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CharactersUnPainted/Char1Siyah:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CharactersPainted/Char1:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CharactersPainted/Char1:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1e-05, 1e-05)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CharactersPainted/Char1:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_j6bry"]
 _data = {
-"char1Gelis": SubResource("Animation_fkkr6")
+"char1Gelis": SubResource("Animation_fkkr6"),
+"char1Gidis": SubResource("Animation_f28vn")
 }
 
 [node name="MainScene" type="Node2D"]
@@ -100,15 +177,15 @@ script = ExtResource("1_be53e")
 
 [node name="Char1Siyah" type="Sprite2D" parent="characters/CharactersUnPainted"]
 visible = false
-position = Vector2(942, 519)
-scale = Vector2(6, 6)
+position = Vector2(2019, 707)
+scale = Vector2(4, 4)
 texture = ExtResource("3_jsyai")
 
 [node name="CharactersPainted" type="Node2D" parent="characters"]
 
 [node name="Char1" type="Sprite2D" parent="characters/CharactersPainted"]
-position = Vector2(942, 519)
-scale = Vector2(6, 6)
+visible = false
+scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("2_bdix7")
 
 [node name="Control" type="Control" parent="."]
@@ -125,16 +202,27 @@ texture = ExtResource("2_vfy6j")
 
 [node name="bg2" type="TextureRect" parent="Control"]
 layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_left = -25.0
+offset_top = 43.0
+offset_right = 1895.0
+offset_bottom = 1123.0
 
-[node name="Button" type="Button" parent="Control"]
+[node name="belge gelis" type="Button" parent="Control"]
 layout_mode = 0
 offset_left = 1165.0
 offset_top = 652.0
 offset_right = 1415.0
 offset_bottom = 713.0
 text = "Onay icin bekleyen nesne"
+
+[node name="yeni karakter gelis" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 1163.0
+offset_top = 570.0
+offset_right = 1418.0
+offset_bottom = 634.0
+text = "yeni karakter cagarir
+"
 
 [node name="HealthBar" type="VBoxContainer" parent="Control"]
 layout_mode = 0
@@ -195,6 +283,6 @@ libraries = {
 "": SubResource("AnimationLibrary_j6bry")
 }
 
-[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/belge gelis" to="." method="_on_button_pressed"]
 [connection signal="body_entered" from="KabulAlani" to="." method="_on_kabul_alani_body_entered"]
 [connection signal="body_entered" from="RedAlani" to="." method="_on_red_alani_body_entered"]
