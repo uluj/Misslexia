@@ -1,15 +1,15 @@
 [gd_scene load_steps=18 format=3 uid="uid://d103jy5tatdjc"]
 
-[ext_resource type="Script" path="res://Scripts/mainScene.gd" id="1_gttq0"]
-[ext_resource type="Texture2D" uid="uid://xrs1j1m6or1" path="res://Assets/char1siyah.png" id="2_0cua8"]
-[ext_resource type="Texture2D" uid="uid://opyovrrhniog" path="res://Assets/AGAgolge.png" id="3_knyr3"]
-[ext_resource type="Texture2D" uid="uid://rh4j5cgrm2ws" path="res://Assets/kadin1golge.png" id="4_f33es"]
-[ext_resource type="Texture2D" uid="uid://daia1xjss3g6m" path="res://Assets/char1.png" id="5_re3sv"]
-[ext_resource type="Texture2D" uid="uid://b1eqdv04s77a7" path="res://Assets/AGA.png" id="6_boycu"]
-[ext_resource type="Texture2D" uid="uid://dgigxeni82w4g" path="res://Assets/kadin1.png" id="7_g32tr"]
-[ext_resource type="Texture2D" uid="uid://bfwn50oi2lr2n" path="res://Assets/game scene.png" id="8_fflj4"]
-[ext_resource type="Texture2D" uid="uid://xtdknp1ofolg" path="res://Assets/icon.svg" id="9_mttet"]
-[ext_resource type="PackedScene" uid="uid://cfevcosht37o1" path="res://Scenes/randomDocumentCreator.tscn" id="10_o72ia"]
+[ext_resource type="Script" path="res://Scripts/mainScene.gd" id="1_be53e"]
+[ext_resource type="Texture2D" uid="uid://daia1xjss3g6m" path="res://Assets/char1.png" id="2_bdix7"]
+[ext_resource type="Texture2D" uid="uid://bfwn50oi2lr2n" path="res://Assets/game scene.png" id="2_vfy6j"]
+[ext_resource type="Texture2D" uid="uid://xtdknp1ofolg" path="res://Assets/icon.svg" id="2_xd77r"]
+[ext_resource type="Texture2D" uid="uid://xrs1j1m6or1" path="res://Assets/char1siyah.png" id="3_jsyai"]
+[ext_resource type="Texture2D" uid="uid://opyovrrhniog" path="res://Assets/AGAgolge.png" id="3_rn44u"]
+[ext_resource type="Texture2D" uid="uid://rh4j5cgrm2ws" path="res://Assets/kadin1golge.png" id="4_7mkfp"]
+[ext_resource type="PackedScene" uid="uid://cfevcosht37o1" path="res://Scenes/randomDocumentCreator.tscn" id="6_ia81n"]
+[ext_resource type="Texture2D" uid="uid://b1eqdv04s77a7" path="res://Assets/AGA.png" id="6_nvx6m"]
+[ext_resource type="Texture2D" uid="uid://dgigxeni82w4g" path="res://Assets/kadin1.png" id="7_b34ul"]
 
 [sub_resource type="Animation" id="Animation_oqder"]
 resource_name = "char1Gelis"
@@ -334,7 +334,7 @@ _data = {
 }
 
 [node name="MainScene" type="Node2D"]
-script = ExtResource("1_gttq0")
+script = ExtResource("1_be53e")
 
 [node name="characters" type="Node2D" parent="."]
 
@@ -343,19 +343,18 @@ script = ExtResource("1_gttq0")
 [node name="Char1Siyah" type="Sprite2D" parent="characters/CharactersUnPainted"]
 position = Vector2(-230, 700)
 scale = Vector2(4, 4)
-texture = ExtResource("2_0cua8")
+texture = ExtResource("3_jsyai")
 
 [node name="Char2Siyah" type="Sprite2D" parent="characters/CharactersUnPainted"]
-visible = false
-position = Vector2(-230, 700)
+position = Vector2(2150, 700)
 scale = Vector2(4, 4)
-texture = ExtResource("3_knyr3")
+texture = ExtResource("3_rn44u")
 
 [node name="Char3Siyah" type="Sprite2D" parent="characters/CharactersUnPainted"]
 visible = false
 position = Vector2(-230, 700)
 scale = Vector2(4, 4)
-texture = ExtResource("4_f33es")
+texture = ExtResource("4_7mkfp")
 
 [node name="CharactersPainted" type="Node2D" parent="characters"]
 
@@ -363,19 +362,19 @@ texture = ExtResource("4_f33es")
 visible = false
 position = Vector2(942, 519)
 scale = Vector2(6, 6)
-texture = ExtResource("5_re3sv")
+texture = ExtResource("2_bdix7")
 
 [node name="Char2" type="Sprite2D" parent="characters/CharactersPainted"]
 visible = false
 position = Vector2(910, 510)
 scale = Vector2(6, 6)
-texture = ExtResource("6_boycu")
+texture = ExtResource("6_nvx6m")
 
 [node name="Char3" type="Sprite2D" parent="characters/CharactersPainted"]
 visible = false
 position = Vector2(917, 537)
 scale = Vector2(6, 6)
-texture = ExtResource("7_g32tr")
+texture = ExtResource("7_b34ul")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -387,7 +386,7 @@ offset_bottom = 1080.0
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("8_fflj4")
+texture = ExtResource("2_vfy6j")
 
 [node name="bg2" type="TextureRect" parent="Control"]
 layout_mode = 0
@@ -403,23 +402,23 @@ offset_bottom = 740.0
 
 [node name="TextureRect" type="TextureRect" parent="Control/HealthBar"]
 layout_mode = 2
-texture = ExtResource("9_mttet")
+texture = ExtResource("2_xd77r")
 
 [node name="TextureRect2" type="TextureRect" parent="Control/HealthBar"]
 layout_mode = 2
-texture = ExtResource("9_mttet")
+texture = ExtResource("2_xd77r")
 
 [node name="TextureRect3" type="TextureRect" parent="Control/HealthBar"]
 layout_mode = 2
-texture = ExtResource("9_mttet")
+texture = ExtResource("2_xd77r")
 
 [node name="TextureRect4" type="TextureRect" parent="Control/HealthBar"]
 layout_mode = 2
-texture = ExtResource("9_mttet")
+texture = ExtResource("2_xd77r")
 
 [node name="TextureRect5" type="TextureRect" parent="Control/HealthBar"]
 layout_mode = 2
-texture = ExtResource("9_mttet")
+texture = ExtResource("2_xd77r")
 
 [node name="OnayButton" type="Button" parent="Control"]
 layout_mode = 0
@@ -437,7 +436,7 @@ offset_right = 1007.0
 offset_bottom = 1040.0
 text = "Reddet"
 
-[node name="randomDocumentCreator" parent="." instance=ExtResource("10_o72ia")]
+[node name="randomDocumentCreator" parent="." instance=ExtResource("6_ia81n")]
 visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

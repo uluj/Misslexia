@@ -1,7 +1,7 @@
 extends Node
 
 # Havuzlar
-var id_names = ["Hamza Ozcan", "Nadir Turktur", "Beyzanur Kahraman", "Uluc Gungor", "Mert Celik", "Azar Gul", "Selin Suvar", "Busra Ozdemirci"]
+var id_names = ["Hamza Ozcan", "Nadir Turktur", "Beyzanur Kahraman", "Uluc Gungor", "Mert Celik", "Azar Gul", "Selin Suvar", "Busra Ozdemirci", "Muhammed Can", "Cem Ucar"]
 var id_numbers = ["A123", "B456", "C789", "D012"]
 var document_illness = ["Herhangi bir hastaligi yok", "Radyasyon yanigi var.", "Herhangi bir hastaligi yok", "Uyusturucu Bagamlisi", "Enfekte", "Herhangi bir hastaligi yok"]
 
@@ -16,9 +16,20 @@ var hatali_document_illness = ["Uyusturucu Bagamlisi", "Enfekte"]
 @onready var document_number_label = $documentNumber
 @onready var document_illness_label = $documentIllness
 @onready var MainScene = $".."
+@onready var reset_timer = $ResetTimer
 
 func _ready():
 	randomize() # Rastgele sayılar için başlatıcı
+	_start_reset_timer()
+	await get_tree().create_timer(4).timeout
+
+func _start_reset_timer():
+	var timer = Timer.new()
+	timer.wait_time = 4
+	timer.one_shot = true
+	add_child(timer)
+	await get_tree().create_timer(4).timeout
+	timer.start()
 
 # Düğme tıklama fonksiyonu
 func _on_create_new_documents_pressed():
@@ -63,3 +74,14 @@ func _on_create_new_documents_pressed():
 		MainScene.currentDocument = true
 		MainScene.is_there_any_document = true
 		print("Dogru belge oluşturuldu.")
+
+	# Timer başlat
+	reset_timer.start(4)
+
+# Etiketleri sıfırlama fonksiyonu
+func _reset_labels():
+	id_name_label.text = "[Boş]"
+	document_name_label.text = "[Boş]"
+	id_number_label.text = "[Boş]"
+	document_number_label.text = "[Boş]"
+	document_illness_label.text = "[Boş]"

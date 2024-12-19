@@ -67,6 +67,7 @@ theme_override_font_sizes/font_size = 40
 text = "documentIllness"
 
 [node name="Create New Documents" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 114.0
 offset_top = 949.0
@@ -74,5 +75,7 @@ offset_right = 519.0
 offset_bottom = 1068.0
 theme_override_font_sizes/font_size = 50
 text = "Create New Documents"
+
+[node name="ResetTimer" type="Timer" parent="."]
 
 [connection signal="pressed" from="Create New Documents" to="." method="_on_create_new_documents_pressed"]
