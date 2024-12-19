@@ -1,7 +1,7 @@
 extends Node2D
 
 # Nesne prefab (sahnede ekli olan tscn dosyasına atıf)
-var spawn_scene: PackedScene = preload("res://Scenes/onay_bekleyen_nesne.tscn")
+var spawn_scene: PackedScene = preload("res://Scenes/idCard.tscn")
 @onready var OnayBekleyenNesneler = $OnayBekleyenNesneler
 
 # Spawn olan nesneyi tutacak değişkenler
