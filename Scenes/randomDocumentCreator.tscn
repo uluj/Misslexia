@@ -1,0 +1,77 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfevcosht37o1"]
+
+[ext_resource type="Script" path="res://Scripts/randomDocumentCreator.gd" id="1_6pemm"]
+[ext_resource type="PackedScene" uid="uid://cetcu7bi5ppfb" path="res://Scenes/document.tscn" id="1_ft2gg"]
+[ext_resource type="PackedScene" uid="uid://dtr1st863lx60" path="res://Scenes/idCard.tscn" id="2_b865g"]
+
+[node name="randomDocumentCreator" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6pemm")
+
+[node name="document" parent="." instance=ExtResource("1_ft2gg")]
+position = Vector2(1455, 570)
+scale = Vector2(4, 4)
+
+[node name="idCard" parent="." instance=ExtResource("2_b865g")]
+position = Vector2(416, 748)
+scale = Vector2(4, 4)
+
+[node name="idName" type="Label" parent="."]
+offset_left = 179.0
+offset_top = 608.0
+offset_right = 653.0
+offset_bottom = 693.0
+theme_override_font_sizes/font_size = 55
+text = "idName"
+
+[node name="idNumber" type="Label" parent="."]
+layout_mode = 0
+offset_left = 187.0
+offset_top = 801.0
+offset_right = 661.0
+offset_bottom = 886.0
+theme_override_font_sizes/font_size = 55
+text = "idNumber"
+
+[node name="documentName" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1173.0
+offset_top = 190.0
+offset_right = 1601.0
+offset_bottom = 281.0
+theme_override_font_sizes/font_size = 40
+text = "documentName"
+
+[node name="documentNumber" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1171.0
+offset_top = 362.0
+offset_right = 1630.0
+offset_bottom = 459.0
+theme_override_font_sizes/font_size = 40
+text = "documentNumber"
+
+[node name="documentIllness" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1183.0
+offset_top = 518.0
+offset_right = 1762.0
+offset_bottom = 753.0
+theme_override_font_sizes/font_size = 40
+text = "documentIllness"
+
+[node name="Create New Documents" type="Button" parent="."]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 949.0
+offset_right = 519.0
+offset_bottom = 1068.0
+theme_override_font_sizes/font_size = 50
+text = "Create New Documents"
+
+[connection signal="pressed" from="Create New Documents" to="." method="_on_create_new_documents_pressed"]
