@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0vmf56ad1u1q"]
+
+[ext_resource type="Script" path="res://onay_bekleyen_nesne.gd" id="1_ed5kw"]
+[ext_resource type="Texture2D" uid="uid://xtdknp1ofolg" path="res://icon.svg" id="1_g2bnx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rsb01"]
+size = Vector2(128, 128)
+
+[node name="OnayBekleyenNesne" type="CharacterBody2D" groups=["movable"]]
+input_pickable = true
+script = ExtResource("1_ed5kw")
+
+[node name="Icon2" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 1, 1)
+texture = ExtResource("1_g2bnx")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rsb01")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
