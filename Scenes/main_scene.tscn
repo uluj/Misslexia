@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://d103jy5tatdjc"]
+[gd_scene load_steps=6 format=3 uid="uid://d103jy5tatdjc"]
 
 [ext_resource type="Script" path="res://Scripts/main_scene.gd" id="1_be53e"]
 [ext_resource type="Texture2D" uid="uid://dgeks22pxdaab" path="res://Assets/Sprite-0002.png" id="2_x68kr"]
 [ext_resource type="Texture2D" uid="uid://xtdknp1ofolg" path="res://Assets/icon.svg" id="2_xd77r"]
+[ext_resource type="Script" path="res://Scenes/HealthBar.gd" id="3_oq3ew"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6dlqi"]
 size = Vector2(232, 201)
@@ -36,6 +37,7 @@ offset_left = 1726.0
 offset_top = 84.0
 offset_right = 1875.0
 offset_bottom = 740.0
+script = ExtResource("3_oq3ew")
 
 [node name="TextureRect" type="TextureRect" parent="Control/HealthBar"]
 layout_mode = 2
@@ -78,6 +80,9 @@ shape = SubResource("RectangleShape2D_6dlqi")
 modulate = Color(1, 0, 0, 0.454902)
 scale = Vector2(1.8125, 1.57031)
 texture = ExtResource("2_xd77r")
+
+[node name="Belgeler" type="Node2D" parent="."]
+position = Vector2(387, 926)
 
 [connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
 [connection signal="body_entered" from="KabulAlani" to="." method="_on_kabul_alani_body_entered"]

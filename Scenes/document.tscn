@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cetcu7bi5ppfb"]
+[gd_scene load_steps=6 format=3 uid="uid://cetcu7bi5ppfb"]
 
 [ext_resource type="Texture2D" uid="uid://cimqv67kaoq7f" path="res://Assets/belge.png" id="1_sy33l"]
+[ext_resource type="Script" path="res://Scripts/document.gd" id="1_v1vog"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uh3bu"]
 size = Vector2(161, 221)
@@ -40,6 +41,7 @@ _data = {
 
 [node name="document" type="CharacterBody2D" groups=["movable"]]
 position = Vector2(1170, 920)
+script = ExtResource("1_v1vog")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
@@ -53,3 +55,6 @@ shape = SubResource("RectangleShape2D_uh3bu")
 libraries = {
 "": SubResource("AnimationLibrary_11r66")
 }
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
