@@ -1,17 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://d103jy5tatdjc"]
+[gd_scene load_steps=11 format=3 uid="uid://d103jy5tatdjc"]
 
-[ext_resource type="Script" path="res://Scripts/main_scene.gd" id="1_be53e"]
+[ext_resource type="Script" path="res://Scripts/mainScene.gd" id="1_be53e"]
 [ext_resource type="Texture2D" uid="uid://daia1xjss3g6m" path="res://Assets/char1.png" id="2_bdix7"]
 [ext_resource type="Texture2D" uid="uid://bfwn50oi2lr2n" path="res://Assets/game scene.png" id="2_vfy6j"]
 [ext_resource type="Texture2D" uid="uid://xtdknp1ofolg" path="res://Assets/icon.svg" id="2_xd77r"]
 [ext_resource type="Texture2D" uid="uid://xrs1j1m6or1" path="res://Assets/char1siyah.png" id="3_jsyai"]
-[ext_resource type="Script" path="res://Scripts/HealthBar.gd" id="3_oq3ew"]
-[ext_resource type="Script" path="res://Scenes/CharactersPainted.gd" id="3_u7veu"]
-[ext_resource type="Script" path="res://Scenes/KabulAlani.gd" id="7_rngtf"]
-[ext_resource type="Script" path="res://Scenes/RedAlani.gd" id="8_pn8su"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6dlqi"]
-size = Vector2(232, 201)
+[ext_resource type="PackedScene" uid="uid://cfevcosht37o1" path="res://Scenes/randomDocumentCreator.tscn" id="6_ia81n"]
 
 [sub_resource type="Animation" id="Animation_fkkr6"]
 resource_name = "char1Gelis"
@@ -26,7 +20,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(162, 707), Vector2(942, 519)]
+"values": [Vector2(-121, 707), Vector2(942, 519)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -90,7 +84,7 @@ tracks/5/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_f28vn"]
-resource_name = "char1Gidis"
+resource_name = "char1OnayliGidis"
 length = 0.7
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -165,10 +159,87 @@ tracks/5/keys = {
 "values": [false, false]
 }
 
+[sub_resource type="Animation" id="Animation_ug7hv"]
+resource_name = "char1RedGidis"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharactersUnPainted/Char1Siyah:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(942, 519), Vector2(-121, 707)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CharactersUnPainted/Char1Siyah:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(6, 6), Vector2(4, 4)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CharactersUnPainted/Char1Siyah:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CharactersPainted/Char1:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(942, 519), Vector2(942, 519)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CharactersPainted/Char1:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(6, 6), Vector2(6, 6)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CharactersPainted/Char1:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_j6bry"]
 _data = {
 "char1Gelis": SubResource("Animation_fkkr6"),
-"char1Gidis": SubResource("Animation_f28vn")
+"char1OnayliGidis": SubResource("Animation_f28vn"),
+"char1RedGidis": SubResource("Animation_ug7hv")
 }
 
 [node name="MainScene" type="Node2D"]
@@ -179,35 +250,16 @@ script = ExtResource("1_be53e")
 [node name="CharactersUnPainted" type="Node2D" parent="characters"]
 
 [node name="Char1Siyah" type="Sprite2D" parent="characters/CharactersUnPainted"]
-position = Vector2(162, 707)
-scale = Vector2(4, 4)
+visible = false
+position = Vector2(942, 519)
+scale = Vector2(6, 6)
 texture = ExtResource("3_jsyai")
 
 [node name="CharactersPainted" type="Node2D" parent="characters"]
-script = ExtResource("3_u7veu")
 
 [node name="Char1" type="Sprite2D" parent="characters/CharactersPainted"]
-visible = false
 position = Vector2(942, 519)
 scale = Vector2(6, 6)
-texture = ExtResource("2_bdix7")
-
-[node name="Char2" type="Sprite2D" parent="characters/CharactersPainted"]
-visible = false
-position = Vector2(6594, 3633)
-scale = Vector2(36, 36)
-texture = ExtResource("2_bdix7")
-
-[node name="Char3" type="Sprite2D" parent="characters/CharactersPainted"]
-visible = false
-position = Vector2(942, 519)
-scale = Vector2(6, 6)
-texture = ExtResource("2_bdix7")
-
-[node name="Char4" type="Sprite2D" parent="characters/CharactersPainted"]
-visible = false
-position = Vector2(6594, 3633)
-scale = Vector2(36, 36)
 texture = ExtResource("2_bdix7")
 
 [node name="Control" type="Control" parent="."]
@@ -224,27 +276,8 @@ texture = ExtResource("2_vfy6j")
 
 [node name="bg2" type="TextureRect" parent="Control"]
 layout_mode = 0
-offset_left = -25.0
-offset_top = 43.0
 offset_right = 1895.0
 offset_bottom = 1123.0
-
-[node name="belge gelis" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 1165.0
-offset_top = 652.0
-offset_right = 1415.0
-offset_bottom = 713.0
-text = "Onay icin bekleyen nesne"
-
-[node name="yeni karakter gelis" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 1163.0
-offset_top = 570.0
-offset_right = 1418.0
-offset_bottom = 634.0
-text = "yeni karakter cagarir
-"
 
 [node name="HealthBar" type="VBoxContainer" parent="Control"]
 layout_mode = 0
@@ -252,7 +285,6 @@ offset_left = 1726.0
 offset_top = 84.0
 offset_right = 1875.0
 offset_bottom = 740.0
-script = ExtResource("3_oq3ew")
 
 [node name="TextureRect" type="TextureRect" parent="Control/HealthBar"]
 layout_mode = 2
@@ -274,32 +306,24 @@ texture = ExtResource("2_xd77r")
 layout_mode = 2
 texture = ExtResource("2_xd77r")
 
-[node name="KabulAlani" type="Area2D" parent="."]
-position = Vector2(1578, 937)
-script = ExtResource("7_rngtf")
+[node name="OnayButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 819.0
+offset_top = 776.0
+offset_right = 1011.0
+offset_bottom = 903.0
+text = "Onayla"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KabulAlani"]
-shape = SubResource("RectangleShape2D_6dlqi")
+[node name="RedButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 825.0
+offset_top = 907.0
+offset_right = 1007.0
+offset_bottom = 1040.0
+text = "Reddet"
 
-[node name="Icon" type="Sprite2D" parent="KabulAlani"]
-modulate = Color(0, 1, 0, 0.470588)
-scale = Vector2(1.8125, 1.57031)
-texture = ExtResource("2_xd77r")
-
-[node name="RedAlani" type="Area2D" parent="."]
-position = Vector2(387, 926)
-script = ExtResource("8_pn8su")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RedAlani"]
-shape = SubResource("RectangleShape2D_6dlqi")
-
-[node name="Icon" type="Sprite2D" parent="RedAlani"]
-modulate = Color(1, 0, 0, 0.454902)
-scale = Vector2(1.8125, 1.57031)
-texture = ExtResource("2_xd77r")
-
-[node name="Belgeler" type="Node2D" parent="."]
-position = Vector2(387, 926)
+[node name="randomDocumentCreator" parent="." instance=ExtResource("6_ia81n")]
+visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../characters")
@@ -307,6 +331,5 @@ libraries = {
 "": SubResource("AnimationLibrary_j6bry")
 }
 
-[connection signal="pressed" from="Control/belge gelis" to="." method="_on_button_pressed"]
-[connection signal="body_entered" from="KabulAlani" to="." method="_on_kabul_alani_body_entered"]
-[connection signal="body_entered" from="RedAlani" to="." method="_on_red_alani_body_entered"]
+[connection signal="pressed" from="Control/OnayButton" to="." method="_on_onay_button_pressed"]
+[connection signal="pressed" from="Control/RedButton" to="." method="_on_red_button_pressed"]

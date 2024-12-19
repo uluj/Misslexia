@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://dtr1st863lx60"]
+[gd_scene load_steps=5 format=3 uid="uid://dtr1st863lx60"]
 
-[ext_resource type="Script" path="res://Scripts/idCard.gd" id="1_1ugji"]
 [ext_resource type="Texture2D" uid="uid://drpiue72lrxrl" path="res://Assets/card.png" id="2_wj10s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aelcq"]
@@ -39,9 +38,8 @@ _data = {
 "idCardGelis": SubResource("Animation_mbrg7")
 }
 
-[node name="idCard" type="CharacterBody2D" groups=["movable"]]
+[node name="idCard" type="CharacterBody2D"]
 position = Vector2(770, 920)
-script = ExtResource("1_1ugji")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(4, 4)
@@ -54,6 +52,3 @@ shape = SubResource("RectangleShape2D_aelcq")
 libraries = {
 "": SubResource("AnimationLibrary_gn7ds")
 }
-
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
