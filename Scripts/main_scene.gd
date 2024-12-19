@@ -29,9 +29,9 @@ func spawn_object2(is_it_true: bool, spawn_position: Vector2) -> Node:
 		if spawned_object.has_method("set_is_it_true"):
 			spawned_object.set_is_it_true(is_it_true)
 				# Play the spawn animation
-		# Play the spawn animation
+		"""# Play the spawn animation
 		if spawned_object.has_method("play_spawn_animation"):
-			spawned_object.play_spawn_animation()
+			spawned_object.play_spawn_animation()"""
 		
 		# Attach the is_it_true value to the object for future logging
 		spawned_object.set_meta("is_it_true", is_it_true)
