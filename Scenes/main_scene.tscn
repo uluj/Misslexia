@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d103jy5tatdjc"]
+[gd_scene load_steps=14 format=3 uid="uid://d103jy5tatdjc"]
 
 [ext_resource type="Script" path="res://Scripts/main_scene.gd" id="1_be53e"]
 [ext_resource type="Texture2D" uid="uid://daia1xjss3g6m" path="res://Assets/char1.png" id="2_bdix7"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://xtdknp1ofolg" path="res://Assets/icon.svg" id="2_xd77r"]
 [ext_resource type="Texture2D" uid="uid://xrs1j1m6or1" path="res://Assets/char1siyah.png" id="3_jsyai"]
 [ext_resource type="Script" path="res://Scripts/HealthBar.gd" id="3_oq3ew"]
+[ext_resource type="Script" path="res://Scenes/CharactersPainted.gd" id="3_u7veu"]
+[ext_resource type="Script" path="res://Scenes/KabulAlani.gd" id="7_rngtf"]
+[ext_resource type="Script" path="res://Scenes/RedAlani.gd" id="8_pn8su"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6dlqi"]
 size = Vector2(232, 201)
@@ -176,16 +179,35 @@ script = ExtResource("1_be53e")
 [node name="CharactersUnPainted" type="Node2D" parent="characters"]
 
 [node name="Char1Siyah" type="Sprite2D" parent="characters/CharactersUnPainted"]
-visible = false
-position = Vector2(2019, 707)
+position = Vector2(162, 707)
 scale = Vector2(4, 4)
 texture = ExtResource("3_jsyai")
 
 [node name="CharactersPainted" type="Node2D" parent="characters"]
+script = ExtResource("3_u7veu")
 
 [node name="Char1" type="Sprite2D" parent="characters/CharactersPainted"]
 visible = false
-scale = Vector2(1e-05, 1e-05)
+position = Vector2(942, 519)
+scale = Vector2(6, 6)
+texture = ExtResource("2_bdix7")
+
+[node name="Char2" type="Sprite2D" parent="characters/CharactersPainted"]
+visible = false
+position = Vector2(6594, 3633)
+scale = Vector2(36, 36)
+texture = ExtResource("2_bdix7")
+
+[node name="Char3" type="Sprite2D" parent="characters/CharactersPainted"]
+visible = false
+position = Vector2(942, 519)
+scale = Vector2(6, 6)
+texture = ExtResource("2_bdix7")
+
+[node name="Char4" type="Sprite2D" parent="characters/CharactersPainted"]
+visible = false
+position = Vector2(6594, 3633)
+scale = Vector2(36, 36)
 texture = ExtResource("2_bdix7")
 
 [node name="Control" type="Control" parent="."]
@@ -254,6 +276,7 @@ texture = ExtResource("2_xd77r")
 
 [node name="KabulAlani" type="Area2D" parent="."]
 position = Vector2(1578, 937)
+script = ExtResource("7_rngtf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KabulAlani"]
 shape = SubResource("RectangleShape2D_6dlqi")
@@ -265,6 +288,7 @@ texture = ExtResource("2_xd77r")
 
 [node name="RedAlani" type="Area2D" parent="."]
 position = Vector2(387, 926)
+script = ExtResource("8_pn8su")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RedAlani"]
 shape = SubResource("RectangleShape2D_6dlqi")
