@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="Misslexia"
-run/main_scene="res://main_scene.tscn"
+run/main_scene="res://Scenes/main_scene.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Assets/icon.svg"
 
 [autoload]
 
-InteractionController="*res://interaction_controller.gd"
+InteractionController="*res://Scripts/interaction_controller.gd"
 
 [dotnet]
 
