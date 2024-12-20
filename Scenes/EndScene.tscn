@@ -1,14 +1,44 @@
-[gd_scene load_steps=2 format=3 uid="uid://bcjgxsj4sly22"]
+[gd_scene load_steps=4 format=3 uid="uid://bcjgxsj4sly22"]
 
+[ext_resource type="FontFile" uid="uid://d32vo8invyic" path="res://Assets/04B_03__.TTF" id="1_tv3de"]
 [ext_resource type="Script" path="res://Scripts/ScoreLabel.gd" id="1_v2cu2"]
+[ext_resource type="AudioStream" uid="uid://cky7xmjvsdu3p" path="res://Assets/Sounds/gameintro.mp3" id="3_5lv1t"]
 
 [node name="EndScene" type="Node2D"]
 
 [node name="ScoreLabel" type="Label" parent="."]
-offset_left = 617.0
-offset_top = 417.0
-offset_right = 1443.0
-offset_bottom = 610.0
-theme_override_font_sizes/font_size = 141
-text = "Score: "
+offset_top = 140.0
+offset_right = 1919.0
+offset_bottom = 320.0
+theme_override_fonts/font = ExtResource("1_tv3de")
+theme_override_font_sizes/font_size = 180
+text = "Score: 000"
+horizontal_alignment = 1
+vertical_alignment = 1
 script = ExtResource("1_v2cu2")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = -1
+anchor_right = 0.5
+offset_left = -63.0
+offset_top = 465.0
+offset_right = 1992.0
+offset_bottom = 1200.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_tv3de")
+theme_override_font_sizes/font_size = 120
+text = "Oynadiginiz icin
+ tesekkur ederiz.
+
+ANTS Jam 2.0'da yapilmistir.
+
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AudioStreamPlayer2D"]
+stream = ExtResource("3_5lv1t")
+autoplay = true

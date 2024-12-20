@@ -1,7 +1,7 @@
 extends Node
 
 # Havuzlar
-var id_names = ["Hamza Ozcan", "Nadir Turktur", "Beyzanur Kahraman", "Uluc Gungor", "Mert Celik", "Azar Gul", "Selin Suvar", "Busra Ozdemirci", "Muhammed Can", "Cem Ucar"]
+var id_names = ["Hamza Ozcan", "Nadir Turktur", "Beyzanur Kahraman", "Uluc Gungor", "Mert Celik", "Azar Gul", "Selin Suvar", "Busra Ozdemirci", "Muhammed Can", "Cem Ucar", 'Ismail Ozelcanat']
 var id_numbers = ["A123", "B456", "C789", "D012"]
 var document_illness = ["Herhangi bir hastaligi yok", "Radyasyon yanigi var.", "Herhangi bir hastaligi yok", "Uyusturucu Bagamlisi", "Enfekte", "Herhangi bir hastaligi yok"]
 

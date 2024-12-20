@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cfevcosht37o1"]
+[gd_scene load_steps=5 format=3 uid="uid://cfevcosht37o1"]
 
 [ext_resource type="Script" path="res://Scripts/randomDocumentCreator.gd" id="1_6pemm"]
 [ext_resource type="PackedScene" uid="uid://8th500agj2su" path="res://Scenes/document.tscn" id="1_ft2gg"]
 [ext_resource type="PackedScene" uid="uid://kvwthbb5sybd" path="res://Scenes/idCard.tscn" id="2_b865g"]
+[ext_resource type="FontFile" uid="uid://d32vo8invyic" path="res://Assets/04B_03__.TTF" id="4_5chs4"]
 
 [node name="randomDocumentCreator" type="Control"]
 layout_mode = 3
@@ -14,7 +15,7 @@ grow_vertical = 2
 script = ExtResource("1_6pemm")
 
 [node name="idCard" parent="." instance=ExtResource("2_b865g")]
-position = Vector2(316, 559)
+position = Vector2(372, 559)
 scale = Vector2(4, 4)
 
 [node name="document" parent="." instance=ExtResource("1_ft2gg")]
@@ -23,47 +24,52 @@ scale = Vector2(3, 3)
 
 [node name="idName" type="Label" parent="."]
 layout_mode = 0
-offset_left = 311.0
-offset_top = 448.0
-offset_right = 594.0
-offset_bottom = 534.0
+offset_left = 366.0
+offset_top = 457.0
+offset_right = 646.0
+offset_bottom = 493.0
+theme_override_fonts/font = ExtResource("4_5chs4")
 theme_override_font_sizes/font_size = 33
 text = "idName"
 
 [node name="idNumber" type="Label" parent="."]
 layout_mode = 0
-offset_left = 305.0
-offset_top = 546.0
-offset_right = 779.0
-offset_bottom = 631.0
+offset_left = 370.0
+offset_top = 557.0
+offset_right = 645.0
+offset_bottom = 593.0
+theme_override_fonts/font = ExtResource("4_5chs4")
 theme_override_font_sizes/font_size = 33
 text = "idNumber"
 
 [node name="documentName" type="Label" parent="."]
 layout_mode = 0
-offset_left = 1132.0
-offset_top = 305.0
-offset_right = 1560.0
-offset_bottom = 396.0
-theme_override_font_sizes/font_size = 40
+offset_left = 1126.0
+offset_top = 319.0
+offset_right = 1647.0
+offset_bottom = 370.0
+theme_override_fonts/font = ExtResource("4_5chs4")
+theme_override_font_sizes/font_size = 50
 text = "documentName"
 
 [node name="documentNumber" type="Label" parent="."]
 layout_mode = 0
-offset_left = 1120.0
-offset_top = 487.0
-offset_right = 1579.0
-offset_bottom = 584.0
-theme_override_font_sizes/font_size = 40
+offset_left = 1126.0
+offset_top = 503.0
+offset_right = 1648.0
+offset_bottom = 554.0
+theme_override_fonts/font = ExtResource("4_5chs4")
+theme_override_font_sizes/font_size = 50
 text = "documentNumber"
 
 [node name="documentIllness" type="Label" parent="."]
 layout_mode = 0
-offset_left = 1128.0
-offset_top = 686.0
-offset_right = 1707.0
-offset_bottom = 771.0
-theme_override_font_sizes/font_size = 40
+offset_left = 1127.0
+offset_top = 702.0
+offset_right = 1648.0
+offset_bottom = 753.0
+theme_override_fonts/font = ExtResource("4_5chs4")
+theme_override_font_sizes/font_size = 50
 text = "documentIllness"
 
 [node name="Create New Documents" type="Button" parent="."]

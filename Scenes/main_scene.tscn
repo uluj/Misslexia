@@ -1,18 +1,27 @@
-[gd_scene load_steps=24 format=3 uid="uid://d103jy5tatdjc"]
+[gd_scene load_steps=33 format=3 uid="uid://d103jy5tatdjc"]
 
 [ext_resource type="Script" path="res://Scripts/mainScene.gd" id="1_be53e"]
 [ext_resource type="Texture2D" uid="uid://daia1xjss3g6m" path="res://Assets/char1.png" id="2_bdix7"]
 [ext_resource type="Texture2D" uid="uid://dyxgauf8fcy3b" path="res://Assets/kartseyyarnig.png" id="2_miyxu"]
-[ext_resource type="Texture2D" uid="uid://bfwn50oi2lr2n" path="res://Assets/game scene.png" id="2_vfy6j"]
-[ext_resource type="Texture2D" uid="uid://xtdknp1ofolg" path="res://Assets/icon.svg" id="2_xd77r"]
 [ext_resource type="Texture2D" uid="uid://xrs1j1m6or1" path="res://Assets/char1siyah.png" id="3_jsyai"]
 [ext_resource type="Texture2D" uid="uid://5e0vic54trkt" path="res://Assets/kartAGA.png" id="3_kfmp8"]
 [ext_resource type="Texture2D" uid="uid://opyovrrhniog" path="res://Assets/AGAgolge.png" id="3_rn44u"]
 [ext_resource type="Texture2D" uid="uid://rh4j5cgrm2ws" path="res://Assets/kadin1golge.png" id="4_7mkfp"]
 [ext_resource type="Texture2D" uid="uid://c2jjlpanyfhcb" path="res://Assets/kartane.png" id="4_nu1q8"]
+[ext_resource type="Texture2D" uid="uid://dkqychmxxi8gp" path="res://Assets/main/bgnebileyim.png" id="5_gf8b6"]
 [ext_resource type="PackedScene" uid="uid://cfevcosht37o1" path="res://Scenes/randomDocumentCreator.tscn" id="6_ia81n"]
 [ext_resource type="Texture2D" uid="uid://b1eqdv04s77a7" path="res://Assets/AGA.png" id="6_nvx6m"]
 [ext_resource type="Texture2D" uid="uid://dgigxeni82w4g" path="res://Assets/kadin1.png" id="7_b34ul"]
+[ext_resource type="Texture2D" uid="uid://coq4s88ya2bkk" path="res://Assets/main/game scenenew.png" id="11_6a5yo"]
+[ext_resource type="Texture2D" uid="uid://b2n6x3c7h65yg" path="res://Assets/letterclosed.png" id="12_x44oc"]
+[ext_resource type="Texture2D" uid="uid://de5m36573ia0m" path="res://Assets/letteropen.png" id="13_yr5vt"]
+[ext_resource type="Texture2D" uid="uid://b5233usxqc6ye" path="res://Assets/main/greenbutton1.png" id="14_qoiya"]
+[ext_resource type="AudioStream" uid="uid://chv2cp73hokd4" path="res://Assets/Sounds/gameprogress.mp3" id="15_3hjxa"]
+[ext_resource type="Texture2D" uid="uid://dxv5hufx0tqw4" path="res://Assets/main/greenbutton2.png" id="15_j2hpe"]
+[ext_resource type="AudioStream" uid="uid://bs3ntnldxsjwl" path="res://Assets/Sounds/paperOnay.mp3" id="16_d3ner"]
+[ext_resource type="Texture2D" uid="uid://cynae2viqclg4" path="res://Assets/main/redbutton1.png" id="16_il3xj"]
+[ext_resource type="Texture2D" uid="uid://ccemglwq02b55" path="res://Assets/main/redbutton2.png" id="17_2cg1q"]
+[ext_resource type="AudioStream" uid="uid://b3vuo0qiylpcl" path="res://Assets/Sounds/paperRed.mp3" id="17_m3t4w"]
 
 [sub_resource type="Animation" id="Animation_oqder"]
 resource_name = "char1Gelis"
@@ -499,6 +508,11 @@ _data = {
 script = ExtResource("1_be53e")
 IDCardTextureArray = Array[Texture]([ExtResource("2_miyxu"), ExtResource("3_kfmp8"), ExtResource("4_nu1q8")])
 
+[node name="bg2" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("5_gf8b6")
+
 [node name="characters" type="Node2D" parent="."]
 
 [node name="CharactersUnPainted" type="Node2D" parent="characters"]
@@ -548,55 +562,83 @@ offset_bottom = 1080.0
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("2_vfy6j")
+texture = ExtResource("11_6a5yo")
 
-[node name="bg2" type="TextureRect" parent="Control"]
-layout_mode = 0
-offset_right = 1895.0
-offset_bottom = 1123.0
-
-[node name="HealthBar" type="VBoxContainer" parent="Control"]
+[node name="AltHealthBar" type="VBoxContainer" parent="Control"]
 layout_mode = 0
 offset_left = 1726.0
 offset_top = 84.0
 offset_right = 1875.0
 offset_bottom = 740.0
+scale = Vector2(0.138991, 0.138991)
+
+[node name="TextureRect" type="TextureRect" parent="Control/AltHealthBar"]
+layout_mode = 2
+texture = ExtResource("12_x44oc")
+
+[node name="TextureRect2" type="TextureRect" parent="Control/AltHealthBar"]
+layout_mode = 2
+texture = ExtResource("12_x44oc")
+
+[node name="TextureRect3" type="TextureRect" parent="Control/AltHealthBar"]
+layout_mode = 2
+texture = ExtResource("12_x44oc")
+
+[node name="TextureRect4" type="TextureRect" parent="Control/AltHealthBar"]
+layout_mode = 2
+texture = ExtResource("12_x44oc")
+
+[node name="TextureRect5" type="TextureRect" parent="Control/AltHealthBar"]
+layout_mode = 2
+texture = ExtResource("12_x44oc")
+
+[node name="HealthBar" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 1726.0
+offset_top = 78.0
+offset_right = 3006.0
+offset_bottom = 6494.0
+scale = Vector2(0.139167, 0.139167)
 
 [node name="TextureRect" type="TextureRect" parent="Control/HealthBar"]
 layout_mode = 2
-texture = ExtResource("2_xd77r")
+texture = ExtResource("13_yr5vt")
 
 [node name="TextureRect2" type="TextureRect" parent="Control/HealthBar"]
 layout_mode = 2
-texture = ExtResource("2_xd77r")
+texture = ExtResource("13_yr5vt")
 
 [node name="TextureRect3" type="TextureRect" parent="Control/HealthBar"]
 layout_mode = 2
-texture = ExtResource("2_xd77r")
+texture = ExtResource("13_yr5vt")
 
 [node name="TextureRect4" type="TextureRect" parent="Control/HealthBar"]
 layout_mode = 2
-texture = ExtResource("2_xd77r")
+texture = ExtResource("13_yr5vt")
 
 [node name="TextureRect5" type="TextureRect" parent="Control/HealthBar"]
 layout_mode = 2
-texture = ExtResource("2_xd77r")
+texture = ExtResource("13_yr5vt")
 
-[node name="OnayButton" type="Button" parent="Control"]
+[node name="RedButton" type="TextureButton" parent="Control"]
 layout_mode = 0
-offset_left = 819.0
-offset_top = 776.0
-offset_right = 1011.0
-offset_bottom = 903.0
-text = "Onayla"
+offset_left = 847.0
+offset_top = 771.0
+offset_right = 872.0
+offset_bottom = 799.0
+scale = Vector2(4.99996, 4.99996)
+texture_normal = ExtResource("16_il3xj")
+texture_pressed = ExtResource("17_2cg1q")
 
-[node name="RedButton" type="Button" parent="Control"]
+[node name="OnayButton" type="TextureButton" parent="Control"]
 layout_mode = 0
-offset_left = 825.0
-offset_top = 907.0
-offset_right = 1007.0
-offset_bottom = 1040.0
-text = "Reddet"
+offset_left = 538.0
+offset_top = 773.0
+offset_right = 563.0
+offset_bottom = 801.0
+scale = Vector2(5.02105, 5.02105)
+texture_normal = ExtResource("14_qoiya")
+texture_pressed = ExtResource("15_j2hpe")
 
 [node name="randomDocumentCreator" parent="." instance=ExtResource("6_ia81n")]
 visible = false
@@ -607,5 +649,18 @@ libraries = {
 "": SubResource("AnimationLibrary_j6bry")
 }
 
-[connection signal="pressed" from="Control/OnayButton" to="." method="_on_onay_button_pressed"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AudioStreamPlayer2D"]
+stream = ExtResource("15_3hjxa")
+
+[node name="onaySesi" type="AudioStreamPlayer" parent="AudioStreamPlayer2D"]
+stream = ExtResource("16_d3ner")
+volume_db = 3.0
+
+[node name="redSesi" type="AudioStreamPlayer" parent="AudioStreamPlayer2D"]
+stream = ExtResource("17_m3t4w")
+volume_db = 2.0
+
 [connection signal="pressed" from="Control/RedButton" to="." method="_on_red_button_pressed"]
+[connection signal="pressed" from="Control/OnayButton" to="." method="_on_onay_button_pressed"]
