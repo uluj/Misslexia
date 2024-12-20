@@ -1,12 +1,15 @@
-[gd_scene load_steps=21 format=3 uid="uid://d103jy5tatdjc"]
+[gd_scene load_steps=24 format=3 uid="uid://d103jy5tatdjc"]
 
 [ext_resource type="Script" path="res://Scripts/mainScene.gd" id="1_be53e"]
 [ext_resource type="Texture2D" uid="uid://daia1xjss3g6m" path="res://Assets/char1.png" id="2_bdix7"]
+[ext_resource type="Texture2D" uid="uid://dyxgauf8fcy3b" path="res://Assets/kartseyyarnig.png" id="2_miyxu"]
 [ext_resource type="Texture2D" uid="uid://bfwn50oi2lr2n" path="res://Assets/game scene.png" id="2_vfy6j"]
 [ext_resource type="Texture2D" uid="uid://xtdknp1ofolg" path="res://Assets/icon.svg" id="2_xd77r"]
 [ext_resource type="Texture2D" uid="uid://xrs1j1m6or1" path="res://Assets/char1siyah.png" id="3_jsyai"]
+[ext_resource type="Texture2D" uid="uid://5e0vic54trkt" path="res://Assets/kartAGA.png" id="3_kfmp8"]
 [ext_resource type="Texture2D" uid="uid://opyovrrhniog" path="res://Assets/AGAgolge.png" id="3_rn44u"]
 [ext_resource type="Texture2D" uid="uid://rh4j5cgrm2ws" path="res://Assets/kadin1golge.png" id="4_7mkfp"]
+[ext_resource type="Texture2D" uid="uid://c2jjlpanyfhcb" path="res://Assets/kartane.png" id="4_nu1q8"]
 [ext_resource type="PackedScene" uid="uid://cfevcosht37o1" path="res://Scenes/randomDocumentCreator.tscn" id="6_ia81n"]
 [ext_resource type="Texture2D" uid="uid://b1eqdv04s77a7" path="res://Assets/AGA.png" id="6_nvx6m"]
 [ext_resource type="Texture2D" uid="uid://dgigxeni82w4g" path="res://Assets/kadin1.png" id="7_b34ul"]
@@ -219,6 +222,58 @@ tracks/3/keys = {
 "values": [false, true]
 }
 
+[sub_resource type="Animation" id="Animation_7ulay"]
+resource_name = "char2OnayliGidis"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharactersUnPainted/Char2Siyah:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(910, 510), Vector2(2150, 700)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CharactersUnPainted/Char2Siyah:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(6, 6), Vector2(4, 4)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CharactersUnPainted/Char2Siyah:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CharactersPainted/Char2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [false, false]
+}
+
 [sub_resource type="Animation" id="Animation_01o8j"]
 resource_name = "char2RedGidis"
 length = 0.6
@@ -321,58 +376,6 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
-}
-
-[sub_resource type="Animation" id="Animation_7ulay"]
-resource_name = "char2OnayliGidis"
-length = 0.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CharactersUnPainted/Char2Siyah:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(910, 510), Vector2(2150, 700)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CharactersUnPainted/Char2Siyah:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(6, 6), Vector2(4, 4)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CharactersUnPainted/Char2Siyah:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("CharactersPainted/Char2:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [false, false]
 }
 
 [sub_resource type="Animation" id="Animation_4h4dc"]
@@ -494,6 +497,7 @@ _data = {
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource("1_be53e")
+IDCardTextureArray = Array[Texture]([ExtResource("2_miyxu"), ExtResource("3_kfmp8"), ExtResource("4_nu1q8")])
 
 [node name="characters" type="Node2D" parent="."]
 

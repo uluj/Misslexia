@@ -16,21 +16,15 @@ var hatali_document_illness = ["Uyusturucu Bagamlisi", "Enfekte"]
 @onready var document_number_label = $documentNumber
 @onready var document_illness_label = $documentIllness
 @onready var MainScene = $".."
-@onready var reset_timer = $ResetTimer
+@onready var idCard = $idCard
+@onready var idCardSprite = $idCard/Sprite2D
+var waitTime : float = 5
 
 func _ready():
 	randomize() # Rastgele sayılar için başlatıcı
-	_start_reset_timer()
+	_on_reset_timer_timeout()
 	await get_tree().create_timer(2).timeout
 
-func _start_reset_timer():
-	print_debug("AAA")
-	var timer = Timer.new()
-	timer.wait_time = 2
-	timer.one_shot = true
-	add_child(timer)
-	await get_tree().create_timer(2).timeout
-	timer.start()
 
 # Düğme tıklama fonksiyonu
 func _on_create_new_documents_pressed():
@@ -76,8 +70,7 @@ func _on_create_new_documents_pressed():
 		MainScene.is_there_any_document = true
 		print("Dogru belge oluşturuldu.")
 
-	# Timer başlat
-	reset_timer.start(2)
+
 
 # Etiketleri sıfırlama fonksiyonu
 func _reset_labels():
@@ -89,12 +82,6 @@ func _reset_labels():
 
 
 func _on_reset_timer_timeout():
-	print_debug("AAA")
-	var timer = Timer.new()
-	timer.wait_time = 2
-	timer.one_shot = true
-	add_child(timer)
-	timer.start()
+	await get_tree().create_timer(waitTime).timeout
 	_reset_labels()
-	await get_tree().create_timer(2).timeout
 

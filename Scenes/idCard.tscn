@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://kvwthbb5sybd"]
 
-[ext_resource type="Texture2D" uid="uid://drpiue72lrxrl" path="res://Assets/card.png" id="2_wj10s"]
+[ext_resource type="Texture2D" uid="uid://5e0vic54trkt" path="res://Assets/kartAGA.png" id="1_t2acj"]
 
 [sub_resource type="Animation" id="Animation_mbrg7"]
 resource_name = "idCardGelis"
@@ -40,8 +40,7 @@ position = Vector2(945, 700)
 scale = Vector2(0.5, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(4, 4)
-texture = ExtResource("2_wj10s")
+texture = ExtResource("1_t2acj")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

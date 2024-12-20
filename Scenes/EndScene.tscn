@@ -1,3 +1,14 @@
-[gd_scene format=3 uid="uid://bcjgxsj4sly22"]
+[gd_scene load_steps=2 format=3 uid="uid://bcjgxsj4sly22"]
+
+[ext_resource type="Script" path="res://Scripts/ScoreLabel.gd" id="1_v2cu2"]
 
 [node name="EndScene" type="Node2D"]
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 617.0
+offset_top = 417.0
+offset_right = 1443.0
+offset_bottom = 610.0
+theme_override_font_sizes/font_size = 141
+text = "Score: "
+script = ExtResource("1_v2cu2")
