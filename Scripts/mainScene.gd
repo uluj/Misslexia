@@ -5,7 +5,7 @@ extends Node2D
 var currentDocument : bool
 var is_there_any_document : bool
 var healthFlag = 0
-var charAnimationArray:Array = [["char1Gelis","char1OnayliGidis","char1RedGidis"],["char2Gelis","char2OnayGidis","char2RedGidis"]]
+var charAnimationArray:Array = [["char1Gelis","char1OnayliGidis","char1RedGidis"],["char2Gelis","char2OnayliGidis","char2RedGidis"],["char3Gelis","char3OnayliGidis","char3RedGidis"]]
 var charAnimationIndex = null
 
 func _ready():

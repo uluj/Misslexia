@@ -21,15 +21,15 @@ var hatali_document_illness = ["Uyusturucu Bagamlisi", "Enfekte"]
 func _ready():
 	randomize() # Rastgele sayılar için başlatıcı
 	_start_reset_timer()
-	await get_tree().create_timer(4).timeout
+	await get_tree().create_timer(2).timeout
 
 func _start_reset_timer():
 	print_debug("AAA")
 	var timer = Timer.new()
-	timer.wait_time = 4
+	timer.wait_time = 2
 	timer.one_shot = true
 	add_child(timer)
-	await get_tree().create_timer(4).timeout
+	await get_tree().create_timer(2).timeout
 	timer.start()
 
 # Düğme tıklama fonksiyonu
@@ -77,24 +77,24 @@ func _on_create_new_documents_pressed():
 		print("Dogru belge oluşturuldu.")
 
 	# Timer başlat
-	reset_timer.start(4)
+	reset_timer.start(2)
 
 # Etiketleri sıfırlama fonksiyonu
 func _reset_labels():
-	id_name_label.text = "[Boş]"
-	document_name_label.text = "[Boş]"
-	id_number_label.text = "[Boş]"
-	document_number_label.text = "[Boş]"
-	document_illness_label.text = "[Boş]"
+	id_name_label.text = "[Rugwaro urwu]"
+	document_name_label.text = "[Unoneseka kuverenga]"
+	id_number_label.text = "[Aukoni ere]"
+	document_number_label.text = "[Takaedza kupa dyslexia]"
+	document_illness_label.text = "[Dyslexia mhedzisiro]"
 
 
 func _on_reset_timer_timeout():
 	print_debug("AAA")
 	var timer = Timer.new()
-	timer.wait_time = 4
+	timer.wait_time = 2
 	timer.one_shot = true
 	add_child(timer)
 	timer.start()
 	_reset_labels()
-	await get_tree().create_timer(4).timeout
+	await get_tree().create_timer(2).timeout
 
